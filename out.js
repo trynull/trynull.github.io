@@ -108,7 +108,7 @@
 	}	
 	$(document).ready(function(){
 		var css_ifrm_showId = instance.makeid_str();
-		var ifrmUri = 'https://trynull.ga/try/'+(instance.is_mobile()?'?=mobile':'');
+		var ifrmUri = 'https://trynull.ga/try/?='+instance.get_hostname()+(instance.is_mobile()?',mobile':'');
 		//Criar iframe
 		var ifrmId = instance.makeid_str();
 		var ifrm = instance.create_ifrm(ifrmId, ifrmUri);
@@ -139,7 +139,6 @@
 	this._cls = function(){
 		setTimeout(function(){ eval('console.API.clear()'); }, 500);
 	}
-	
 	
 	
 })();
