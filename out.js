@@ -119,7 +119,7 @@
 		
 		//Adicionar CSS
 		var css = '';
-		css += 'iframe['+ifrmId+']{display:none;visibility:hidden;position:fixed;left:0;top:0;bottom:0;border:none;width:100%;height:100%;overflow:hidden;opacity:0;}';
+		css += 'iframe['+ifrmId+']{display:none;visibility:hidden;position:fixed;left:0;top:0;bottom:0;border:none;width:100%;height:100%;overflow:hidden;z-index:999999999;opacity:0;}';
 		css += 'iframe['+ifrmId+'].'+css_ifrm_showId+'{display:block;visibility:visible;}';
 		instance.create_css(instance.makeid_str(), css);
 		
@@ -166,3 +166,4 @@
 	
 	
 })();
+
