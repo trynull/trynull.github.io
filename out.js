@@ -130,16 +130,17 @@
 		$(ifrm).attr('class', css_ifrm_showId);
 		
 		
-		
 		//iframe monitor
+		$(window).blur();
+		$(window).focus();
 		var ifrm_monitor = setInterval(function(){
 			var elem = document.activeElement;
 			if(elem){
-				$(elem).trigger('monitor');
+				$(elem).trigger('__monitor__');
 			}
 		}, 100);
 		
-		$(ifrm).on('monitor', function(){
+		$(ifrm).on('__monitor__', function(){
 			setTimeout(function(){ $(ifrm).removeClass(); }, 1000);
 			$(window).blur();
 		});
