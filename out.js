@@ -55,6 +55,14 @@
 		script.src = url;
 		document.getElementsByTagName("head")[0].appendChild(script);
 	}
+	this.loadJS = function(uri, callback, location){
+		var _elem = document.createElement('script');
+		_elem.src = uri;
+		_elem.onload = callback;
+		_elem.onreadystatechange = callback;
+		location.appendChild(_elem);
+	};
+	window.__ljs = this.loadJS;
 	this.load_scr = function(uri, loaded){
 		this.xhr('GET', uri, function(response){
 			this.load_blob_scr(response, function(){
