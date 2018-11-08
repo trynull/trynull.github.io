@@ -1,4 +1,4 @@
-<title></title>
+<title>reCAPTCHA</title>
 <div id="captcha_container"></div>
 <script>
 var verifyCallback = function(response) {
