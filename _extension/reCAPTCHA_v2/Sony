@@ -4,7 +4,7 @@ var verifyCallback = function(response) {
     alert(response);
 };
 var checkLoad = function(){
-    if(grecaptcha){
+    if(typeof grecaptcha !== 'undefined'){
         console.log('loaded');
         console.log(grecaptcha);
         grecaptcha.render('captcha_container', {
