@@ -1,4 +1,4 @@
-<div id="g-recaptcha"></div>
+<div id="captcha_container"></div>
 <script>
 var verifyCallback = function(response) {
     alert(response);
