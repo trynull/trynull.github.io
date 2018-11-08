@@ -1,6 +1,6 @@
-<title>reCAPTCHA</title>
 <div id="captcha_container"></div>
 <script>
+document.title = 'reCAPTCHA';
 var verifyCallback = function(response) {
     alert(response);
 };
