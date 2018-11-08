@@ -1,4 +1,3 @@
-<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
 <div id="g-recaptcha"></div>
 <script>
 var onloadCallback = function() {
@@ -9,3 +8,5 @@ var onloadCallback = function() {
     console.log('oi');
 }
 </script>
+
+<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
