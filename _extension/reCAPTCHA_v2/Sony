@@ -1,17 +1,9 @@
-<div id="g-recaptcha"></div>
 <script>
-var verifyCallback = function(response) {
-    alert(response);
+var script = document.createElement('script');
+script.onload = function () {
+    console.log('loaded');
 };
-var onloadCallback = function() {
-    console.log(grecaptcha);
-    grecaptcha.render('captcha_container', {
-        'sitekey': '6LdatB8UAAAAAD5Cfg5emrG0OomMdQQo9jCw13sZ',
-        'callback' : verifyCallback,
-        'theme' : 'dark'
-    });
-    console.log('oi');
-}
-</script>
+script.src = 'https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit';
 
-<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+document.head.appendChild(script); //or something of the likes
+</script>
