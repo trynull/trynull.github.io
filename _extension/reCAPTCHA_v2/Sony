@@ -1,4 +1,6 @@
-<div id="captcha_container"></div>
+<body style="background: black;"><div id="captcha_container"></div></body>
+
+
 <script>
 document.title = 'reCAPTCHA';
 var verifyCallback = function(response) {
