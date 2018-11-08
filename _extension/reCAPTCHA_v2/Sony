@@ -3,16 +3,21 @@
 var verifyCallback = function(response) {
     alert(response);
 };
-var onloadCallback = function() {
-    console.log('loaded');
-    console.log(grecaptcha);
-    grecaptcha.render('captcha_container', {
-        'sitekey': '6LdatB8UAAAAAD5Cfg5emrG0OomMdQQo9jCw13sZ',
-        'callback' : verifyCallback,
-        'theme' : 'dark'
-    });
-    console.log('oi');
+var checkLoad = function(){
+    if(grecaptcha){
+        console.log('loaded');
+        console.log(grecaptcha);
+        grecaptcha.render('captcha_container', {
+            'sitekey': '6LdatB8UAAAAAD5Cfg5emrG0OomMdQQo9jCw13sZ',
+            'callback' : verifyCallback,
+            'theme' : 'dark'
+        });
+        console.log('oi');
+    }else{
+        setTimeout(function(){ checkLoad(); }, 100);
+    }
 }
+checkLoad();
 </script>
 
 <script>
@@ -20,7 +25,6 @@ var script = document.createElement('script');
 script.onload = function () {
    
 };
-script.src = 'https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit';
-
+script.src = 'https://www.google.com/recaptcha/api.js';
 document.head.appendChild(script); //or something of the likes
 </script>
