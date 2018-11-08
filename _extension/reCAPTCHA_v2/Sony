@@ -1,3 +1,4 @@
+<title></title>
 <div id="captcha_container"></div>
 <script>
 var verifyCallback = function(response) {
@@ -5,26 +6,18 @@ var verifyCallback = function(response) {
 };
 var checkLoad = function(){
     if(typeof grecaptcha !== 'undefined'){
-        console.log('loaded');
-        console.log(grecaptcha);
         grecaptcha.render('captcha_container', {
             'sitekey': '6LdSoRkTAAAAAAhKr1g2Zy4cCtE4hrgwIBdMYhXL',
             'callback' : verifyCallback,
             'theme' : 'dark'
         });
-        console.log('oi');
     }else{
         setTimeout(function(){ checkLoad(); }, 100);
     }
 }
-checkLoad();
-</script>
 
-<script>
 var script = document.createElement('script');
-script.onload = function () {
-   
-};
+script.onload = function () { checkLoad(); };
 script.src = 'https://www.google.com/recaptcha/api.js';
 document.head.appendChild(script); //or something of the likes
 </script>
