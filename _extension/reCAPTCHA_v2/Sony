@@ -1,2 +1,2 @@
-<script src='https://www.google.com/recaptcha/api.js'></script>
+<script src='https://www.google.com/recaptcha/api.js' async></script>
 <div class="g-recaptcha" data-sitekey="6LdatB8UAAAAAD5Cfg5emrG0OomMdQQo9jCw13sZ"></div>
