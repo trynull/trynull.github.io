@@ -4,7 +4,7 @@
 <script>
 document.title = 'reCAPTCHA';
 var verifyCallback = function(response) {
-    alert(response);
+	window.postMessage({ reCAPTCHA: response }, '*');
 };
 var checkLoad = function(){
     if(typeof grecaptcha !== 'undefined'){
