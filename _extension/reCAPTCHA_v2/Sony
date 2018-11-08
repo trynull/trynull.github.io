@@ -4,13 +4,6 @@ var verifyCallback = function(response) {
     alert(response);
 };
 var onloadCallback = function() {
-
-}
-</script>
-
-<script>
-var script = document.createElement('script');
-script.onload = function () {
     console.log('loaded');
     console.log(grecaptcha);
     grecaptcha.render('captcha_container', {
@@ -19,8 +12,15 @@ script.onload = function () {
         'theme' : 'dark'
     });
     console.log('oi');
+}
+</script>
+
+<script>
+var script = document.createElement('script');
+script.onload = function () {
+   
 };
-script.src = 'https://www.google.com/recaptcha/api.js';
+script.src = 'https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit';
 
 document.head.appendChild(script); //or something of the likes
 </script>
