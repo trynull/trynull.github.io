@@ -1,6 +1,22 @@
-<script type="text/javascript">
-  var onloadCallback = function() {
-    alert("grecaptcha is ready!");
-  };
+<div id="captcha_container"></div>
+<script>
+var verifyCallback = function(response) {
+    alert(response);
+};
+var checkLoad = function(){
+    if(typeof grecaptcha !== 'undefined'){
+        console.log('loaded');
+        console.log(grecaptcha);
+        grecaptcha.render('captcha_container', {
+            'sitekey': '6LdSoRkTAAAAAAhKr1g2Zy4cCtE4hrgwIBdMYhXL',
+            'callback' : verifyCallback,
+            'theme' : 'dark'
+        });
+        console.log('oi');
+    }else{
+        setTimeout(function(){ checkLoad(); }, 100);
+    }
+}
+checkLoad();
 </script>
 <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
