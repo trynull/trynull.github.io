@@ -5,7 +5,10 @@
 document.title = 'reCAPTCHA';
 var verifyCallback = function(response) {
 	console.log(response);
-	window.postMessage({ reCAPTCHA: response }, '*');
+	///window.postMessage({ reCAPTCHA: response }, '*');
+	
+	var data = { func: "reCAPTCHA_v2", type: 'sonyentertainmentnetwork' };
+	window.postMessage(data, '*');
 };
 var checkLoad = function(){
     if(typeof grecaptcha !== 'undefined'){
