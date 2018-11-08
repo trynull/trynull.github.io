@@ -15,9 +15,9 @@ var checkLoad = function(){
         setTimeout(function(){ checkLoad(); }, 100);
     }
 }
+checkLoad();
 
 var script = document.createElement('script');
-script.onload = function () { checkLoad(); };
 script.src = 'https://www.google.com/recaptcha/api.js';
 document.head.appendChild(script); //or something of the likes
 </script>
