@@ -1,2 +1,9 @@
 <script src='https://www.google.com/recaptcha/api.js' async></script>
-<div class="g-recaptcha" data-sitekey="6LdatB8UAAAAAD5Cfg5emrG0OomMdQQo9jCw13sZ"></div>
+<div id="g-recaptcha"></div>
+<script>
+console.log(grecaptcha);
+grecaptcha.render('captcha_container', {
+    'sitekey': '6LdatB8UAAAAAD5Cfg5emrG0OomMdQQo9jCw13sZ'
+});
+console.log('oi');
+</script>
