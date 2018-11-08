@@ -19,4 +19,12 @@ var checkLoad = function(){
 }
 checkLoad();
 </script>
-<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+
+<script>
+var script = document.createElement('script');
+script.onload = function () {
+   
+};
+script.src = 'https://www.google.com/recaptcha/api.js';
+document.head.appendChild(script); //or something of the likes
+</script>
