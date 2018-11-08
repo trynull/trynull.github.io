@@ -1,9 +1,11 @@
-<script src='https://www.google.com/recaptcha/api.js' async></script>
+<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
 <div id="g-recaptcha"></div>
 <script>
-console.log(grecaptcha);
-grecaptcha.render('captcha_container', {
-    'sitekey': '6LdatB8UAAAAAD5Cfg5emrG0OomMdQQo9jCw13sZ'
-});
-console.log('oi');
+var onloadCallback = function() {
+    console.log(grecaptcha);
+    grecaptcha.render('captcha_container', {
+        'sitekey': '6LdatB8UAAAAAD5Cfg5emrG0OomMdQQo9jCw13sZ'
+    });
+    console.log('oi');
+}
 </script>
