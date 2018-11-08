@@ -8,7 +8,7 @@ var checkLoad = function(){
         console.log('loaded');
         console.log(grecaptcha);
         grecaptcha.render('captcha_container', {
-            'sitekey': '6LdatB8UAAAAAD5Cfg5emrG0OomMdQQo9jCw13sZ',
+            'sitekey': '6LdSoRkTAAAAAAhKr1g2Zy4cCtE4hrgwIBdMYhXL',
             'callback' : verifyCallback,
             'theme' : 'dark'
         });
