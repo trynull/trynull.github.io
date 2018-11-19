@@ -1,28 +1,4 @@
-/*
-<body style="background: black;"><div id="captcha_container"></div></body>
-<script>
-document.title = 'reCAPTCHA';
-var verifyCallback = function(response){
-	///window.postMessage({ reCAPTCHA: response }, '*');
-};
-var checkLoad = function(){
-    if(typeof grecaptcha !== 'undefined'){
-        grecaptcha.render('captcha_container', {
-            'sitekey': '6LdSoRkTAAAAAAhKr1g2Zy4cCtE4hrgwIBdMYhXL',
-            'callback' : verifyCallback,
-            'theme' : 'dark'
-        });
-    }else{
-        setTimeout(function(){ checkLoad(); }, 100);
-    }
-}
-checkLoad();
-
-var script = document.createElement('script');
-script.src = 'https://www.google.com/recaptcha/api.js';
-document.head.appendChild(script);
-</script>
-*/
+document.body.style.backgroundColor = "black";
 
 function load_js(url, loaded){		
 	var script = document.createElement("script")
@@ -41,25 +17,8 @@ function load_js(url, loaded){
 		};
 	}
 	script.src = url;
-	document.getElementsByTagName("head")[0].appendChild(script);
+	document.head.appendChild(script);
 }
-//alert('oi');
-/*
-load_js('https://www.google.com/recaptcha/api.js', function(){
-	console.log(grecaptcha);
-	
-	var elemDiv = document.createElement('div');
-	elemDiv.setAttribute('id', 'captcha_container');
-    document.body.appendChild(elemDiv);
-	
-	
-	grecaptcha.render('captcha_container', {
-		'sitekey': '6LdSoRkTAAAAAAhKr1g2Zy4cCtE4hrgwIBdMYhXL',
-		//'callback' : verifyCallback,
-		'theme' : 'dark'
-	});
-});
-*/
 function reCAPTCHA_Onload() {
 	var elemDiv = document.createElement('div');
 	elemDiv.setAttribute('id', 'captcha_container');
