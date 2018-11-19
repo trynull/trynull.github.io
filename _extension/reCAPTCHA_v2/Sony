@@ -1,7 +1,5 @@
 /*
 <body style="background: black;"><div id="captcha_container"></div></body>
-
-
 <script>
 document.title = 'reCAPTCHA';
 var verifyCallback = function(response){
@@ -24,6 +22,29 @@ var script = document.createElement('script');
 script.src = 'https://www.google.com/recaptcha/api.js';
 document.head.appendChild(script);
 </script>
-
 */
-alert('oi');
+
+function load_js(url, loaded){		
+	var script = document.createElement("script")
+	script.type = type;
+	if (script.readyState){
+		script.onreadystatechange = function(){
+			if (script.readyState == "loaded" ||
+					script.readyState == "complete"){
+				script.onreadystatechange = null;
+				if(typeof loaded === 'function') loaded();
+			}
+		};
+	} else {
+		script.onload = function(){
+			if(typeof loaded === 'function') loaded();
+		};
+	}
+	script.src = url;
+	document.getElementsByTagName("head")[0].appendChild(script);
+}
+//alert('oi');
+
+load_js('https://www.google.com/recaptcha/api.js', function(){
+	console.log(grecaptcha);
+});
