@@ -44,7 +44,7 @@ function load_js(url, loaded){
 	document.getElementsByTagName("head")[0].appendChild(script);
 }
 //alert('oi');
-
+/*
 load_js('https://www.google.com/recaptcha/api.js', function(){
 	console.log(grecaptcha);
 	
@@ -58,4 +58,23 @@ load_js('https://www.google.com/recaptcha/api.js', function(){
 		//'callback' : verifyCallback,
 		'theme' : 'dark'
 	});
+});
+*/
+function onloadCallback() {
+	console.log('oi');
+	console.log(grecaptcha);
+}
+load_js('https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit', function(){
+	console.log(grecaptcha);
+	/*
+	var elemDiv = document.createElement('div');
+	elemDiv.setAttribute('id', 'captcha_container');
+    document.body.appendChild(elemDiv);
+	
+	
+	grecaptcha.render('captcha_container', {
+		'sitekey': '6LdSoRkTAAAAAAhKr1g2Zy4cCtE4hrgwIBdMYhXL',
+		//'callback' : verifyCallback,
+		'theme' : 'dark'
+	});*/
 });
