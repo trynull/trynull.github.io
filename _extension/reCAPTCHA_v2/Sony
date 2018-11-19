@@ -55,7 +55,7 @@ load_js('https://www.google.com/recaptcha/api.js', function(){
 	
 	grecaptcha.render('captcha_container', {
 		'sitekey': '6LdSoRkTAAAAAAhKr1g2Zy4cCtE4hrgwIBdMYhXL',
-		'callback' : verifyCallback,
+		//'callback' : verifyCallback,
 		'theme' : 'dark'
 	});
 });
