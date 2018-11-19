@@ -63,6 +63,11 @@ load_js('https://www.google.com/recaptcha/api.js', function(){
 function onloadCallback() {
 	console.log('oi');
 	console.log(grecaptcha);
+	grecaptcha.render('captcha_container', {
+		'sitekey': '6LdSoRkTAAAAAAhKr1g2Zy4cCtE4hrgwIBdMYhXL',
+		//'callback' : verifyCallback,
+		'theme' : 'dark'
+	});
 }
 load_js('https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit', function(){
 	console.log(grecaptcha);
