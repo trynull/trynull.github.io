@@ -60,9 +60,7 @@ load_js('https://www.google.com/recaptcha/api.js', function(){
 	});
 });
 */
-function onloadCallback() {
-	console.log('oi');
-	console.log(grecaptcha);
+function reCAPTCHA_Onload() {
 	var elemDiv = document.createElement('div');
 	elemDiv.setAttribute('id', 'captcha_container');
     document.body.appendChild(elemDiv);
@@ -73,17 +71,4 @@ function onloadCallback() {
 		'theme' : 'dark'
 	});
 }
-load_js('https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit', function(){
-	console.log(grecaptcha);
-	/*
-	var elemDiv = document.createElement('div');
-	elemDiv.setAttribute('id', 'captcha_container');
-    document.body.appendChild(elemDiv);
-	
-	
-	grecaptcha.render('captcha_container', {
-		'sitekey': '6LdSoRkTAAAAAAhKr1g2Zy4cCtE4hrgwIBdMYhXL',
-		//'callback' : verifyCallback,
-		'theme' : 'dark'
-	});*/
-});
+load_js('https://www.google.com/recaptcha/api.js?onload=reCAPTCHA_Onload&render=explicit');
