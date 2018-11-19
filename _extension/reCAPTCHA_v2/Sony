@@ -26,7 +26,7 @@ document.head.appendChild(script);
 
 function load_js(url, loaded){		
 	var script = document.createElement("script")
-	script.type = type;
+	script.type = 'text/javascript';
 	if (script.readyState){
 		script.onreadystatechange = function(){
 			if (script.readyState == "loaded" ||
