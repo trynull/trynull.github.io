@@ -25,7 +25,7 @@ function reCAPTCHA_Onload() {
     document.body.appendChild(elemDiv);
 	
 	grecaptcha.render('captcha_container', {
-		'sitekey': '6LdSoRkTAAAAAAhKr1g2Zy4cCtE4hrgwIBdMYhXL',
+		'sitekey': '6LcAOQITAAAAAGcqIkDADOyFRCwmMP14nrtFDEtK',
 		//'callback' : verifyCallback,
 		'theme' : 'dark'
 	});
