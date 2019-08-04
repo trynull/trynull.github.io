@@ -1,1 +1,1 @@
-alert('hi');
+alert(typeof sendAndClose);
